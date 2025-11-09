@@ -32,7 +32,8 @@
             "pages": [
               "seo-tools/jyunichecktool",
               "seo-tools/ai-kenshutuki",
-              "seo-tools/ai-kenshutuki"
+              "seo-tools/keyword-suggest",
+              "seo-tools/rankinkeyword"
             ]
           },
           {
