@@ -14,12 +14,17 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "AI Overviews",
+            "group": "AI Overviewsツール",
             "pages": [
               "ai-overviews/hyoujisaitekika",
-              "quickstart",
-              "faq",
-              "development"
+              "ai-overviews/hyoujikeywordbunseki"
+            ]
+          },
+          {
+            "group": "GEO(生成AI最適化)ツール",
+            "pages": [
+              "geo-tools/ai-inyousaitekikabunseki",
+              "ai-overviews/hyoujikeywordbunseki"
             ]
           },
           {
