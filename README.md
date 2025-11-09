@@ -1,4 +1,4 @@
-# Mintlify Starter Kit111
+# Mintlify Starter Kit1111
 
 Use the starter kit to get your docs deployed and ready to customize.
 
