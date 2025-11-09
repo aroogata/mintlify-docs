@@ -33,7 +33,14 @@
               "seo-tools/jyunichecktool",
               "seo-tools/ai-kenshutuki",
               "seo-tools/keyword-suggest",
-              "seo-tools/rankinkeyword"
+              "seo-tools/rankinkeyword",
+              "seo-tools/kanren-keyword-bunseki",
+              "seo-tools/keyword-kyougou-bunseki",
+              "seo-tools/backlink-bunseki",
+              "seo-tools/image-seo-saitekika",
+              "seo-tools/ai-blog-seisei",
+              "seo-tools/faq-schema"
+              
             ]
           },
           {
