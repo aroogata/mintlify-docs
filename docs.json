@@ -28,6 +28,13 @@
             ]
           },
           {
+            "group": "SEOツール",
+            "pages": [
+              "seo-tools/jyunichektool",
+              "ai-overviews/hyoujikeywordbunseki"
+            ]
+          },
+          {
             "group": "Support",
             "pages": [
               "support",
