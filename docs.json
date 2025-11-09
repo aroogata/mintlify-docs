@@ -30,8 +30,9 @@
           {
             "group": "SEOツール",
             "pages": [
-              "seo-tools/jyunichektool",
-              "ai-overviews/hyoujikeywordbunseki"
+              "seo-tools/jyunichecktool",
+              "seo-tools/ai-kenshutuki",
+              "seo-tools/ai-kenshutuki"
             ]
           },
           {
