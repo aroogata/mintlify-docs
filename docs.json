@@ -14,9 +14,9 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "AI Overviews",
             "pages": [
-              "index",
+              "ai-overviews/hyoujisaitekika",
               "quickstart",
               "faq",
               "development"
