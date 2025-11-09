@@ -40,7 +40,15 @@
               "seo-tools/image-seo-saitekika",
               "seo-tools/ai-blog-seisei",
               "seo-tools/faq-schema"
-              
+            ]
+          },
+          {
+            "group": "Google Adsツール",
+            "pages": [
+              "google-ads/sitekanren-keyword",
+              "google-ads/searchvolum-bunseki",
+              "google-ads/kanren-keyword-bunseki",
+              "google-ads/adtraffic-yosoku"
             ]
           },
           {
