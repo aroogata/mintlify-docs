@@ -52,6 +52,13 @@
             ]
           },
           {
+            "group": "SNSツール",
+            "pages": [
+              "sns-tools/x-thread-generator",
+              "sns-tools/image-x-post"
+            ]
+          },
+          {
             "group": "Support",
             "pages": [
               "support",
