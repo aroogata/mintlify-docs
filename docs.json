@@ -59,6 +59,18 @@
             ]
           },
           {
+            "group": "AIチャット",
+            "pages": [
+              "ai-chat/ai-chat"
+            ]
+          },
+          {
+            "group": "料金プラン",
+            "pages": [
+              "price/price"
+            ]
+          },
+          {
             "group": "Support",
             "pages": [
               "support",
