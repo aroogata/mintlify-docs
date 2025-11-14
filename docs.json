@@ -100,14 +100,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "LinkSurge",
+          "href": "https://linksurge.jp/",
           "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
         }
       ]
     }
@@ -120,7 +115,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://linksurge.jp/contact"
       }
     ],
     "primary": {
