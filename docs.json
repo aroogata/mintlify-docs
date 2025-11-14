@@ -108,8 +108,8 @@
     }
   },
   "logo": {
-    "light": "/logo/LinkSurge.svg",
-    "dark": "/logo/LinkSurge.svg"
+    "light": "/logo/linksurge.svg",
+    "dark": "/logo/inksurge.svg"
   },
   "navbar": {
     "links": [
