@@ -23,8 +23,7 @@
           {
             "group": "GEO(生成AI最適化)ツール",
             "pages": [
-              "geo-tools/ai-inyousaitekikabunseki",
-              "ai-overviews/hyoujikeywordbunseki"
+              "geo-tools/ai-inyousaitekikabunseki"
             ]
           },
           {
