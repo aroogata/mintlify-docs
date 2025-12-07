@@ -23,8 +23,8 @@
           {
             "group": "GEO(生成AI最適化)ツール",
             "pages": [
-              "geo-tools/ai-inyousaitekikabunseki",
-              "geo-tools/geo-roshutu"
+              "geo-monitor/ai-inyousaitekikabunseki",
+              "Ggeo-monitor/geo-roshutu"
             ]
           },
           {
