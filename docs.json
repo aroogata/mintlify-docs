@@ -25,7 +25,8 @@
             "pages": [
               "geo-monitor/ai-inyousaitekikabunseki",
               "geo-monitor/geo-roshutu",
-              "geo-monitor/geo-brand-cross"
+              "geo-monitor/geo-brand-cross",
+              "geo-monitor/geo-mentions-search"
             ]
           },
           {
