@@ -23,6 +23,7 @@
           {
             "group": "GEO(生成AI最適化)ツール",
             "pages": [
+              "geo-monitor/geo-monitor",
               "geo-monitor/ai-inyousaitekikabunseki",
               "geo-monitor/geo-roshutu",
               "geo-monitor/geo-brand-cross",
