@@ -76,8 +76,7 @@
           {
             "group": "Support",
             "pages": [
-              "support",
-              "essentials/navigation"
+              "support"
             ]
           }
         ]
