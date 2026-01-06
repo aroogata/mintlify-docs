@@ -1,4 +1,306 @@
 ---
 title: "FAQスキーマ生成"
-description: "Description of your new file."
+description: "質問と回答を入力するだけでSEO対応のFAQスキーマ（JSON-LD）を自動生成する無料ツール"
+icon: "code"
 ---
+
+## 概要
+
+FAQスキーマ生成は、質問と回答を入力するだけでGoogleのリッチスニペット表示に対応したFAQスキーマ（JSON-LD形式）を自動生成する無料ツールです。
+
+<Info>
+  **完全無料・ログイン不要・無制限利用**で、今すぐFAQスキーマを生成できます。
+  アカウント登録は一切必要ありません。
+</Info>
+
+### 主な用途
+
+- **SEO強化**: Google検索結果でのリッチスニペット表示を実現
+- **CTR向上**: 検索結果ページで質問と回答が展開表示され、クリック率アップ
+- **構造化データ対応**: Googleの構造化データガイドラインに準拠したマークアップ
+- **簡単実装**: 生成されたコードをコピー＆ペーストするだけで実装完了
+
+## 主要機能
+
+<CardGroup cols={2}>
+  <Card title="完全無料" icon="gift">
+    一切の費用はかかりません。ログイン・アカウント登録も不要
+  </Card>
+  <Card title="即座に利用可能" icon="bolt">
+    ページを開いてすぐに使用開始。待ち時間なし
+  </Card>
+  <Card title="無制限利用" icon="infinity">
+    回数制限なし。何度でもFAQスキーマを生成可能
+  </Card>
+  <Card title="リアルタイム生成" icon="rotate">
+    入力と同時にスキーマコードが自動生成・更新
+  </Card>
+  <Card title="コピー機能" icon="copy">
+    ワンクリックでクリップボードにコピー
+  </Card>
+  <Card title="ダウンロード機能" icon="download">
+    生成したスキーマをファイルとしてダウンロード
+  </Card>
+  <Card title="プレビュー表示" icon="eye">
+    生成されるFAQの見た目をリアルタイムでプレビュー
+  </Card>
+  <Card title="ダークモード対応" icon="moon">
+    ダークモード・ライトモードに完全対応
+  </Card>
+</CardGroup>
+
+## 料金
+
+<Note>
+  **完全無料**です。ポイント消費はありません。ログインも不要です。
+</Note>
+
+| 操作 | 料金 |
+|------|------|
+| FAQスキーマ生成 | 無料 |
+| 複数FAQ作成 | 無料 |
+| コピー・ダウンロード | 無料 |
+
+## FAQスキーマ（JSON-LD）とは
+
+FAQスキーマは、Googleが推奨する構造化データの一種で、Webページ上のよくある質問（FAQ）を検索エンジンに正しく伝えるためのマークアップです。
+
+### SEO効果
+
+<CardGroup cols={2}>
+  <Card title="リッチスニペット表示" icon="sparkles">
+    Google検索結果で質問と回答が展開表示され、視認性が大幅に向上
+  </Card>
+  <Card title="CTR（クリック率）向上" icon="arrow-up-right">
+    検索結果での表示面積が増加し、クリック率アップが期待できる
+  </Card>
+  <Card title="検索エンジン理解向上" icon="magnifying-glass">
+    ページの内容を検索エンジンが正確に理解し、適切なクエリで表示
+  </Card>
+  <Card title="音声検索対応" icon="microphone">
+    音声検索でFAQの回答が読み上げられる可能性が向上
+  </Card>
+</CardGroup>
+
+### リッチスニペットの表示例
+
+Google検索結果でFAQスキーマが認識されると、以下のように表示されます：
+
+```
+🔗 あなたのサイトタイトル
+   https://example.com/faq
+
+   よくある質問が展開表示されます：
+
+   ▼ 質問1: ○○とは何ですか？
+     回答: ○○は〜です。
+
+   ▼ 質問2: △△の使い方は？
+     回答: △△は〜のように使います。
+```
+
+<Warning>
+  リッチスニペットの表示はGoogleの判断によります。FAQスキーマを設置しても、必ず表示されるとは限りません。
+</Warning>
+
+## 利用手順
+
+<Steps>
+  <Step title="FAQ項目の入力">
+    質問と回答を入力します。
+
+    **入力項目:**
+    - **質問**: ユーザーがよく質問する内容
+    - **回答**: 質問に対する回答
+
+    <Tip>
+      検索ユーザーが実際に検索しそうな質問を設定すると、SEO効果が高まります。
+    </Tip>
+  </Step>
+  <Step title="FAQ項目の追加（任意）">
+    複数のFAQを作成する場合は「項目を追加」ボタンをクリックします。
+
+    <Note>
+      FAQ項目数に制限はありません。必要な数だけ追加できます。
+    </Note>
+  </Step>
+  <Step title="スキーマの確認">
+    入力内容に基づいて、右側にJSON-LDスキーマがリアルタイムで生成されます。
+    プレビューでFAQの表示イメージも確認できます。
+  </Step>
+  <Step title="スキーマのコピーまたはダウンロード">
+    生成されたスキーマを取得します。
+
+    **取得方法:**
+    - **コピー**: 「コピー」ボタンでクリップボードにコピー
+    - **ダウンロード**: 「ダウンロード」ボタンでファイル保存
+  </Step>
+  <Step title="HTMLへの設置">
+    取得したスキーマコードをWebサイトのHTMLに貼り付けます。
+
+    **設置場所:**
+    - `<head>` タグ内（推奨）
+    - `<body>` タグ内の任意の場所
+
+    ```html
+    <head>
+      <!-- 他のmetaタグなど -->
+
+      <!-- FAQスキーマをここに貼り付け -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [...]
+      }
+      </script>
+    </head>
+    ```
+  </Step>
+  <Step title="構造化データの検証（推奨）">
+    設置後、Googleの構造化データテストツールで検証することをおすすめします。
+
+    **検証ツール:**
+    - [Google リッチリザルト テスト](https://search.google.com/test/rich-results)
+    - [Schema Markup Validator](https://validator.schema.org/)
+  </Step>
+</Steps>
+
+## 生成されるスキーマ形式
+
+生成されるFAQスキーマは、Googleの推奨するJSON-LD形式です。
+
+### スキーマ構造
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "質問テキスト",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "回答テキスト"
+      }
+    }
+  ]
+}
+```
+
+### 出力形式
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "SEOとは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO（Search Engine Optimization）とは、検索エンジン最適化のことです。..."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "FAQスキーマのメリットは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google検索結果でリッチスニペットとして表示され、CTR向上が期待できます。"
+      }
+    }
+  ]
+}
+</script>
+```
+
+## 効果的なFAQの書き方
+
+### 質問の書き方
+
+| ポイント | 説明 | 良い例 | 悪い例 |
+|---------|------|--------|--------|
+| 具体的に | 曖昧な表現を避ける | 「送料はいくらですか？」 | 「配送について」 |
+| 検索意図を意識 | ユーザーが検索しそうな言葉で | 「○○の使い方は？」 | 「○○について」 |
+| 疑問形で | 質問として自然な形に | 「返品は可能ですか？」 | 「返品」 |
+
+### 回答の書き方
+
+| ポイント | 説明 |
+|---------|------|
+| 簡潔に | 長すぎる回答は避け、要点を明確に |
+| 具体的に | 数字や具体例を含めると説得力が増す |
+| 完結させる | 回答だけで疑問が解消するように |
+
+<Tip>
+  Googleは回答テキストの最初の数文をリッチスニペットに表示することが多いため、重要な情報は冒頭に記載しましょう。
+</Tip>
+
+## よくある質問
+
+<AccordionGroup>
+  <Accordion title="FAQスキーマを設置すれば必ずリッチスニペットが表示されますか？">
+    いいえ、リッチスニペットの表示はGoogleの判断によります。FAQスキーマを正しく設置しても、必ず表示されるとは限りません。
+    ただし、設置することで表示される可能性は高まります。
+  </Accordion>
+  <Accordion title="FAQ項目は何個まで作成できますか？">
+    このツールでは項目数に制限はありません。ただし、Googleのガイドラインでは、1ページに過度に多くのFAQを設置することは推奨されていません。
+    一般的には5〜15個程度が適切です。
+  </Accordion>
+  <Accordion title="HTMLのどこに設置すればいいですか？">
+    `<head>` タグ内、または `<body>` タグ内の任意の場所に設置できます。
+    `<head>` タグ内への設置が推奨されていますが、どちらでも正しく認識されます。
+  </Accordion>
+  <Accordion title="設置後、どのくらいで検索結果に反映されますか？">
+    Googleがページを再クロールし、構造化データを認識するまで数日〜数週間かかることがあります。
+    Google Search Consoleからインデックス登録をリクエストすることで、反映を早められる場合があります。
+  </Accordion>
+  <Accordion title="既存のFAQスキーマがある場合はどうすればいいですか？">
+    既存のスキーマを新しく生成したスキーマに置き換えてください。
+    1ページに同じ種類の構造化データが複数あると、エラーの原因になることがあります。
+  </Accordion>
+  <Accordion title="回答にHTMLタグを含めることはできますか？">
+    このツールではプレーンテキストのみ対応しています。
+    回答にリンクやリストなどのHTMLを含めたい場合は、生成後にJSON内の `"text"` 部分を手動で編集してください。
+  </Accordion>
+  <Accordion title="多言語サイトの場合はどうすればいいですか？">
+    各言語のページごとに、その言語でFAQスキーマを作成・設置してください。
+    日本語ページには日本語のFAQ、英語ページには英語のFAQを設置します。
+  </Accordion>
+  <Accordion title="このツールの利用にログインは必要ですか？">
+    いいえ、ログインは一切不要です。ページを開いてすぐに使用でき、完全無料で回数制限もありません。
+  </Accordion>
+</AccordionGroup>
+
+## 仕様
+
+| 項目 | 仕様 |
+|------|------|
+| 料金 | 完全無料 |
+| ログイン | 不要 |
+| 利用回数 | 無制限 |
+| FAQ項目数 | 無制限 |
+| 出力形式 | JSON-LD（`<script>` タグ付き） |
+| コピー機能 | ワンクリックコピー対応 |
+| ダウンロード | テキストファイル形式 |
+
+## 関連機能
+
+<CardGroup cols={2}>
+  <Card title="AIブログ記事生成" icon="pen-nib" href="/blog-generator">
+    SEO・AIO最適化されたブログ記事をAIで自動生成
+  </Card>
+  <Card title="コンテンツSEO分析" icon="file-lines" href="/seo/content-analysis">
+    ページのSEO要素を詳細分析
+  </Card>
+  <Card title="キーワードサジェスト" icon="magnifying-glass" href="/keyword-suggestions">
+    関連キーワードを取得・分析
+  </Card>
+  <Card title="SEO順位チェック" icon="chart-line" href="/seo-hub/ranking-dashboard">
+    キーワードごとの検索順位を追跡
+  </Card>
+</CardGroup>
