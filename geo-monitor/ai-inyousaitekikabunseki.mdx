@@ -375,6 +375,108 @@ Contact: ai@example.com
 
 ---
 
+## robots.txt / sitemap.xml / llms.txt 取得フロー
+
+AI引用最適化分析では、これらの重要なファイルを**サブディレクトリ優先**で検索します。
+
+### 検索優先順位
+
+```
+入力URL例: https://example.com/blog/article-1
+    ↓
+1. サブディレクトリ優先検索（/blog/が第一階層の場合）
+    │
+    ├─ robots.txt
+    │   ① https://example.com/blog/robots.txt    ← 最初に検索
+    │   ② https://example.com/robots.txt         ← フォールバック
+    │
+    ├─ sitemap.xml
+    │   ① /blog/sitemap.xml                      ← 最初に検索
+    │   ② /blog/sitemaps.xml
+    │   ③ /blog/sitemap_index.xml
+    │   ④ /sitemap.xml                           ← ルートにフォールバック
+    │   ⑤ /sitemaps.xml
+    │   ⑥ /sitemap_index.xml
+    │   ...
+    │
+    └─ llms.txt
+        ① /blog/llms.txt                         ← 最初に検索
+        ② /blog/llms-full.txt
+        ③ /llms.txt                              ← ルートにフォールバック
+        ④ /llms-full.txt
+```
+
+### なぜサブディレクトリ優先なのか
+
+大企業や大規模サイトでは、**サブディレクトリを別サイトとして運用**するケースが増えています：
+
+- `example.com/minna-money/` → 金融情報サイト
+- `example.com/careers/` → 採用サイト
+- `example.com/support/` → サポートサイト
+
+これらは同一ドメイン下にありながら、独自の`robots.txt`や`sitemap.xml`を持つ場合があります。AI引用最適化分析はこのパターンを自動検出し、適切なファイルを取得します。
+
+### 検索結果の表示
+
+ファイルが見つかった場合、どこで発見されたかを表示します：
+
+| 表示             | 意味                                       |
+| -------------- | ---------------------------------------- |
+| **【サブディレクトリ】** | `/blog/robots.txt` など、入力URLのサブディレクトリから取得 |
+| **【ドメインルート】**  | `/robots.txt` など、ドメイン直下から取得              |
+
+<Note>
+  サブディレクトリにファイルがない場合は、自動的にドメインルートを検索します。両方にない場合は「未検出」と表示されます。
+</Note>
+
+---
+
+## コンテンツ解析（メイントピック）
+
+<Info>
+  **メイントピック**セクションは、ページの主要コンテンツ構造を可視化する機能です。DataForSEO Content Parsing APIを使用して、ページ内の見出しとそれに関連するコンテンツを構造化して表示します。
+</Info>
+
+### メイントピックとは
+
+ページの主要なセクションを自動抽出し、以下の情報を表示します：
+
+| 項目                             | 説明                       |
+| ------------------------------ | ------------------------ |
+| **見出し（h_title）**               | セクションの見出しタグ（H2, H3等）から抽出 |
+| **主要コンテンツ（primary_content）**   | 見出し直下の主要なテキスト            |
+| **補足コンテンツ（secondary_content）** | 関連するサブテキスト、リスト等          |
+| **表データ（table_content）**        | セクション内のテーブル情報            |
+
+### メイントピックが表示されない場合
+
+**メイントピック**セクションが表示されない場合、以下の原因が考えられます：
+
+<AccordionGroup>
+  <Accordion title="1. ページ構造がセマンティックでない">
+    DataForSEO Content Parsing APIは、セマンティックなHTML構造（`<article>`, `<section>`, `<main>`タグや適切な見出し階層）を持つページからコンテンツを抽出します。
+
+    **改善方法**: 適切な見出しタグ（H1→H2→H3）の階層構造を使用し、意味のあるHTMLタグでコンテンツを構造化してください。
+  </Accordion>
+  <Accordion title="2. JavaScriptレンダリングが必要なページ">
+    SPAやJavaScript依存の動的コンテンツは、Content Parsing APIが完全に解析できない場合があります。
+
+    **確認方法**: ブラウザで「ページのソースを表示」して、コンテンツがHTMLに含まれているか確認してください。
+  </Accordion>
+  <Accordion title="3. コンテンツ量が少ない">
+    ページのテキストコンテンツが極端に少ない場合、メイントピックとして抽出されないことがあります。
+  </Accordion>
+  <Accordion title="4. API解析エラー">
+    一部のサイトでは、セキュリティ設定やアクセス制限により、Content Parsing APIが正常にデータを取得できない場合があります。
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  メイントピックが表示されなくても、**Onpage分析**や**基本分析**の結果は取得できます。これらの結果を参考にSEO改善を進めてください。
+</Tip>
+
+---
+
 ## キャッシュ・履歴
 
 分析結果は自動的に保存され、後から確認できます。
