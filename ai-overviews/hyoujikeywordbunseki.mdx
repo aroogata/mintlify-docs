@@ -1,189 +1,413 @@
 ---
 title: "AIO表示キーワード分析"
-description: "指定したドメイン・URLがどんなキーワードで検索したときにAI Overviewsに表示されているかを一括分析するツールです。 AI Overviews内での順位、参照URL、タイトル、説明文、検索ボリュームなどの情報を取得し、AI検索での露出状況を可視化します。"
+description: "AI Overview（AIオーバービュー）に自社サイトが引用されているキーワードを分析し、月間流入予想を算出"
+icon: "sparkles"
 ---
 
-**ポイント消費**: 1分析30ポイント~100ポイント（結果が0件の場合は消費なし）
+## 概要
 
-![AIO表示キーワード分析01](/images/AIO表示キーワード分析01.jpg)
+**AIO表示キーワード分析**は、Google検索結果に表示されるAI Overview（AIオーバービュー）で、自社サイトが引用されているキーワードを網羅的に分析する機能です。
 
-## 活用事例
+AI Overviewは2024年から本格的に導入されたGoogle検索の新機能で、検索結果の最上部にAIが生成した回答を表示します。この回答には参照元として複数のWebサイトが引用され、新たなトラフィック獲得チャネルとして注目されています。
 
-**自社サイトのAI Overview露出状況の把握**
+### 主な特徴
 
-- どのキーワードでAI Overviewsに表示されているかを一覧化
-- 表示順位の分布を確認し、改善が必要なキーワードを特定
+<CardGroup cols={2}>
+  <Card title="AIO引用キーワード発見" icon="magnifying-glass">
+    自社ドメインがAI Overviewに引用されている全キーワードを網羅的に抽出
+  </Card>
+  <Card title="独自CTR係数による流入予測" icon="chart-line">
+    調査データに基づくAI Overview専用CTR係数で正確な月間流入予想を算出
+  </Card>
+  <Card title="SERP順位との比較" icon="ranking-star">
+    同一キーワードでのオーガニック検索順位・流入予想も同時に取得
+  </Card>
+  <Card title="SEO指標の包括分析" icon="gauge">
+    検索ボリューム、CPC、競合難易度、SEO難易度、検索意図を一括取得
+  </Card>
+</CardGroup>
 
-**サブドメイン・サブディレクトリの分析**
+---
 
-- 前方一致を使用して、特定のサブドメインやディレクトリ配下の全ページを分析\
-  例: `https://blog.example.com` や `https://example.com/products/` の分析
+## 料金
 
-**競合サイトの分析**
+<Info>
+  データが見つからなかった場合、ポイントは消費されません。
+</Info>
 
-- 競合サイトのドメインを入力して、どのキーワードでAI Overviewsに表示されているかを調査
-- 自社との差を把握し、改善ポイントを特定
+| 取得件数上限 | 消費ポイント |
+| ------ | ------ |
+| 100件   | 30pt   |
+| 500件   | 50pt   |
+| 100件   | 100pt  |
 
-**レポート作成**
+---
 
-- CSV出力機能を活用して、社内やクライアント向けのレポートを作成
-- 定期的な分析結果を比較して、改善効果を測定
+## 分析項目
 
-## 主な機能
+### 表示カラム一覧
 
-### 1. AI Overview表示キーワード分析
+| カラム        | 説明                                                                 |
+| ---------- | ------------------------------------------------------------------ |
+| キーワード      | AI Overviewに引用されている検索キーワード                                         |
+| AIO月間流入予想  | AI Overview経由の推定月間流入数（独自CTR係数で計算）                                  |
+| SERP順位     | 同一キーワードでのオーガニック検索順位                                                |
+| SERP月間流入予想 | オーガニック検索経由の推定月間流入数（AIO表示による減衰考慮）                                   |
+| ページタイトル    | AI Overviewに引用されているページのタイトル                                        |
+| URL        | 引用されているページのURL                                                     |
+| 月間検索ボリューム  | キーワードの月間検索回数                                                       |
+| CPC        | 広告のクリック単価（USD）                                                     |
+| 広告競合難易度    | 広告出稿の競合度（0-100）                                                    |
+| SEO難易度     | SEOでの上位表示難易度（0-100）                                                |
+| SERP機能     | 検索結果に表示される特殊機能（リッチスニペット等）                                          |
+| 検索意図       | キーワードの検索意図（informational, navigational, commercial, transactional） |
 
-- 指定したドメイン・URLがAI Overviewsに表示されているキーワードを一括取得
-- 最大1000件まで取得可能
+---
 
-### 2. 詳細情報の表示
+## 月間流入予想の計算方法
 
-- **参照URL**: AI Overviewsで引用されているページのURL
-- **タイトル**: 引用ページのタイトル
-- **説明文**: AI Overviewsに表示された説明文
-- **検索ボリューム**: キーワードの月間検索数
-- **CPC**: クリック単価
-- **競合性**: キーワードの競合レベル
-- **検索意図**: キーワードの検索意図（Commercial、Informational、Navigational、Transactional、Mixed）
+<Warning>
+  この計算方法は複数の調査データに基づく推定値です。実際のトラフィックは、コンテンツの品質、表示位置の変動、ユーザー行動の変化などにより異なる場合があります。
+</Warning>
 
-### 3. 統計情報の可視化
+### AI Overview内CTR係数
 
-![表示キーワード分析 グラフ Jp](/images/表示キーワード分析-グラフ.jpg)
+AI Overviewは検索結果の最上部に表示されますが、ユーザーはAI生成回答で満足する傾向があり、引用リンクのCTR（クリック率）は従来のSERP順位より**大幅に低い**ことが調査で判明しています。
 
-**円グラフ**: AI Overview内での順位分布を可視化
+<Tabs>
+  <Tab title="CTR係数一覧">
+    | AIO内位置 | CTR係数 | 従来SERP相当順位 |
+    | ------ | ----- | ---------- |
+    | 1位     | 4.0%  | 6位相当       |
+    | 2位     | 2.2%  | 8位相当       |
+    | 3位     | 1.2%  | 10-11位相当   |
+    | 4位     | 0.6%  | 14位相当      |
+    | 5位     | 0.3%  | 19位相当      |
+    | 6位以降   | 0.1%  | -          |
+  </Tab>
+  <Tab title="計算式">
+    ```
+    AIO月間流入予想 = 月間検索ボリューム × AIO CTR係数
+    ```
 
-- 1位: 緑色
-- 2-3位: 青色
-- 4-10位: オレンジ色
-- 11-20位: 赤色
-- 21-100位: 紫色
+    **計算例**：
 
-**統計カード**: 総表示数、推定総流入数（月間）などを表示
+    - 検索ボリューム: 10,000
+    - AIO内位置: 1位
+    - CTR係数: 4.0%（0.040）
+    - **月間流入予想: 10,000 × 0.040 = 400**
+  </Tab>
+  <Tab title="実装コード">
+    ```typescript
+    // src/lib/ctr-coefficients.ts
+    export const AIO_CTR_COEFFICIENTS: Record<number, number> = {
+      1: 0.040,  // 4.0%
+      2: 0.022,  // 2.2%
+      3: 0.012,  // 1.2%
+      4: 0.006,  // 0.6%
+      5: 0.003,  // 0.3%
+    };
+    export const AIO_CTR_DEFAULT = 0.001;  // 6位以降: 0.1%
+    
+    export function calculateAIOTraffic(
+      searchVolume: number,
+      aioPosition: number
+    ): number {
+      if (!searchVolume || searchVolume <= 0) return 0;
+      if (!aioPosition || aioPosition <= 0) return 0;
+    
+      const ctr = AIO_CTR_COEFFICIENTS[aioPosition] ?? AIO_CTR_DEFAULT;
+      return Math.round(searchVolume * ctr);
+    }
+    ```
+  </Tab>
+</Tabs>
 
-### 4. CSV出力機能
+### SERP CTR係数（オーガニック検索）
 
-- 分析結果をCSV形式でダウンロード可能
-- 並び替えセレクトボックスの右側に「CSV出力」ボタンを配置
+従来のオーガニック検索結果に対するCTR係数は、DataForSEOが提供する標準的な値を使用しています。
 
-## ステップ1: 分析設定
+<Accordion title="SERP CTR係数一覧（1位〜22位）">
+  | 順位  | CTR係数 | 順位    | CTR係数 |
+  | --- | ----- | ----- | ----- |
+  | 1位  | 30.4% | 12位   | 0.75% |
+  | 2位  | 16.2% | 13位   | 0.59% |
+  | 3位  | 9.73% | 14位   | 0.56% |
+  | 4位  | 6.59% | 15位   | 0.51% |
+  | 5位  | 4.69% | 16位   | 0.43% |
+  | 6位  | 3.38% | 17位   | 0.43% |
+  | 7位  | 2.56% | 18位   | 0.33% |
+  | 8位  | 1.97% | 19位   | 0.27% |
+  | 9位  | 1.51% | 20位   | 0.24% |
+  | 10位 | 1.13% | 21位   | 0.23% |
+  | 11位 | 0.91% | 22位以降 | 0.21% |
+</Accordion>
 
-**1. ドメイン・URL入力**
+### AIO表示時のSERP CTR減衰
 
-- 分析したいドメインまたはURLを入力
-- 例: `example.com` または `https://example.com/article`\
-  `https://`は省略可能
+<Note>
+  AI Overviewが表示されるキーワードでは、ユーザーの注意がAIOに集中するため、従来のオーガニック検索結果のCTRは大幅に低下します。
+</Note>
 
-**2. 一致方式の選択**
+複数の調査結果を総合的に分析した結果、AIO表示時のSERP CTRは\*\*非表示時の約40%\*\*に低下することが判明しました。
 
-- **ドメイン一致**: ドメイン全体の結果を取得（例: `example.com`）
-- **前方一致**: サブドメインやサブディレクトリ全体の結果を取得\
-  例: `https://aaa.bbb.com` → `aaa.bbb.com`配下の全ページ\
-  例: `https://aaa.com/bbb/` → `/bbb/`配下の全ページ
-- **完全一致**: 指定したURLと完全に一致するページのみ取得
+| 調査機関                | AIO表示時CTR | 非表示時CTR | 減衰率     |
+| ------------------- | --------- | ------- | ------- |
+| Pew Research Center | 8%        | 15%     | 53%     |
+| Seer Interactive    | 0.61%     | 1.62%   | 38%     |
+| **本システム採用値**        | -         | -       | **40%** |
 
-**3. 地域・言語の選択**
+<Tabs>
+  <Tab title="計算式">
+    ```
+    SERP月間流入予想（AIO表示あり）= 月間検索ボリューム × SERP CTR係数 × 0.40
+    SERP月間流入予想（AIO表示なし）= 月間検索ボリューム × SERP CTR係数
+    ```
 
-- **地域**: 日本、アメリカ、イギリスから選択
-- **言語**: 日本語、英語から選択
+    **計算例**（AIO表示あり）：
 
-**4. 最大取得件数の選択**
+    - 検索ボリューム: 10,000
+    - SERP順位: 3位
+    - SERP CTR係数: 9.73%（0.0973）
+    - 減衰係数: 40%（0.40）
+    - **月間流入予想: 10,000 × 0.0973 × 0.40 = 389**
+  </Tab>
+  <Tab title="実装コード">
+    ```typescript
+    // src/lib/ctr-coefficients.ts
+    export const SERP_CTR_WITH_AIO_FACTOR = 0.40;
+    
+    export function calculateSERPTraffic(
+      searchVolume: number,
+      serpPosition: number,
+      hasAIO: boolean = true
+    ): number {
+      if (!searchVolume || searchVolume <= 0) return 0;
+      if (!serpPosition || serpPosition <= 0) return 0;
+    
+      const baseCtr = SERP_CTR_COEFFICIENTS[serpPosition] ?? SERP_CTR_DEFAULT;
+      const adjustedCtr = hasAIO ? baseCtr * SERP_CTR_WITH_AIO_FACTOR : baseCtr;
+    
+      return Math.round(searchVolume * adjustedCtr);
+    }
+    ```
+  </Tab>
+</Tabs>
 
-- 100、500、1000から選択
-- 件数が多いほど分析時間が長くなります
+### CTR係数の根拠データソース
 
-## ステップ2: 分析実行
+本システムのCTR係数は、以下の調査データを参考に設定しています。
 
-1. \*\*「分析開始」\*\*ボタンをクリック
-2. 分析中は「分析中」と表示され、ローディングアニメーションが表示されます
-3. 分析完了後、結果が自動的に表示されます
+<AccordionGroup>
+  <Accordion title="Pew Research Center（2024年）" icon="chart-pie">
+    **調査内容**: AI Overview表示時のユーザー行動調査
 
-## ステップ3: 結果の確認
+    **主な発見**:
 
-**統計情報カード**
+    - AI Overview表示時のリンククリック率: 約8%
+    - AI Overview非表示時のリンククリック率: 約15%
+    - **結論**: AI Overview表示により、リンクへのクリックが約半分に減少
+  </Accordion>
+  <Accordion title="Search Engine Land（2024年）" icon="newspaper">
+    **調査内容**: AI Overview内のポジション別CTR分析
 
-- **分析結果の総表示数**: AI Overviewsに表示されているキーワードの総数
-- **AI Overviews統計情報**: 順位分布の円グラフと統計情報
-- **AI Overviewsからの推定総流入数(月間)**: ETV（Estimated Traffic Value）に基づく推定流入数
+    **主な発見**:
 
-※算出方法：AI Overviewsからの推定総流入数(月間)＝AIO掲載位置の月間検索ボリューム×CTR係数(Datagorseo定義)
+    - AI Overview内1位のCTRは、従来オーガニック6位相当
+    - AI Overview内で上位でも、従来SERPの上位ほどのCTRは得られない
+    - **結論**: AI Overview引用は新たなトラフィックソースだが、1位あたりのCTRは低い
+  </Accordion>
+  <Accordion title="TrustRadius（2024年）" icon="users">
+    **調査内容**: AI Overview内ポジション間のCTR比較
 
-**CTR係数：**
+    **主な発見**:
 
-1: 0.304\
-2: 0.162\
-3: 0.0973\
-4: 0.0659\
-5: 0.0469\
-6: 0.0338\
-7: 0.0256\
-8: 0.0197\
-9: 0.015\
-10: 0.0113\
-11: 0.0091\
-12: 0.0075\
-13: 0.0059\
-14: 0.0056\
-15: 0.0051\
-16: 0.0043\
-17: 0.0043\
-18: 0.0033\
-19: 0.0027\
-20: 0.0024\
-21: 0.0023\
-22: 0.0022\
-23以降: 0.0021
+    - AI Overview内ポジション1のCTRは、ポジション2の約2倍
+    - 上位ポジションへの集中度が高い
+    - **結論**: AI Overview内でも上位ポジションの重要性は高い
+  </Accordion>
+  <Accordion title="Seer Interactive（2024年）" icon="microscope">
+    **調査内容**: AI Overview表示がオーガニックCTRに与える影響
 
-### **分析結果テーブル**
+    **主な発見**:
 
-![表示キーワード分析 分析結果 Jp](/images/表示キーワード分析-分析結果.jpg)
+    - AI Overview表示時のオーガニックCTR: 0.61%
+    - AI Overview非表示時のオーガニックCTR: 1.62%
+    - **結論**: AI Overview表示により、オーガニックCTRが約38%に低下
+  </Accordion>
+</AccordionGroup>
 
-- **キーワード**: AI Overviewsに表示されたキーワード（クリックでGoogle検索を開く）
-- **順位**: AI Overview内での順位（1位〜100位）
-- **ページタイトル**: AI Overviewsで引用されているページのタイトル
-- **URL**: 引用ページのURL（クリックでページを開く）
-- **検索ボリューム**: 月間検索数
-- **CPC**: Google広告出稿のクリック単価
+---
 
-  キーワードに対して過去に支払われた平均クリック単価（米ドル）を表します
-- **競合性**: Google広告出稿競合レベル（Low、Medium、High）
-- **検索意図**: キーワードの検索意図\
-  キーワードの検索意図に応じて色分けされたバッジが表示されます：
-  - **Commercial（商業的）**: 青色 - 商品・サービスを探している
-  - **Informational（情報検索）**: 緑色 - 情報を探している
-  - **Navigational（ナビゲーション）**: 紫色 - 特定のサイトを探している
-  - **Transactional（取引）**: オレンジ色 - 購入・登録などの行動を意図
-  - **Mixed（混合）**: グレー色 - 複数の意図が混在
+## 利用手順
 
-  各バッジにマウスオーバーすると、検索意図の詳細説明が表示されます。
+<Steps>
+  <Step title="分析対象を入力">
+    分析したいドメインまたはURLを入力します。
 
-### 並び替え機能
+    - **ドメイン**: `example.com`（サブドメイン含む全ページを分析）
+    - **URL**: `https://example.com/page`（特定ページのみ分析）
+  </Step>
+  <Step title="マッチタイプを選択">
+    | タイプ  | 説明         | 例                                  |
+    | ---- | ---------- | ---------------------------------- |
+    | ドメイン | ドメイン全体を分析  | `example.com` で example.com/\* を対象 |
+    | URL  | 完全一致URLを分析 | 指定URLのみを対象                         |
+  </Step>
+  <Step title="検索設定を選択">
+    - **地域**: Japan（デフォルト）
+    - **言語**: Japanese（デフォルト）
+    - **取得件数**: 100件 / 500件 / 1000件
+  </Step>
+  <Step title="分析を実行">
+    「分析開始」ボタンをクリックして分析を実行します。 処理時間は取得件数により異なります（通常10〜60秒）。
+  </Step>
+  <Step title="結果を確認・エクスポート">
+    分析結果はテーブル形式で表示されます。 「CSVダウンロード」ボタンで結果をエクスポートできます。
+  </Step>
+</Steps>
 
-![表示キーワード分析 並び替え Jp](/images/表示キーワード分析-並び替え.jpg)
+---
 
-- **ボリューム順**: 検索ボリュームの降順
-- **順位順**: AI Overview内での順位の昇順
-- **CPC順**: クリック単価の降順
-- **競合性順**: 競合レベルの降順
+## 分析結果の活用方法
 
-### 検索フィルター
+### AIO最適化戦略の立案
 
-キーワード、タイトル、URLで検索可能
+<CardGroup cols={2}>
+  <Card title="高流入キーワードの特定" icon="bullseye">
+    AIO月間流入予想が高いキーワードを特定し、そのページのコンテンツを強化することでAIO内での引用維持・上位表示を目指します。
+  </Card>
+  <Card title="SERP順位との相関分析" icon="chart-mixed">
+    AIO引用とSERP順位の関係を分析し、どちらのチャネルからの流入が多いかを把握します。
+  </Card>
+  <Card title="競合分析" icon="users-viewfinder">
+    競合ドメインのAIO引用状況を分析し、自社が引用されていないキーワード機会を発見します。
+  </Card>
+  <Card title="コンテンツ改善優先度" icon="list-check">
+    AIO引用されているがSERP順位が低いキーワードを特定し、コンテンツ改善の優先度を決定します。
+  </Card>
+</CardGroup>
 
-## ステップ4: CSV出力
+### KPI設定の例
 
-1. 分析結果テーブルの右上にある「CSV出力」ボタンをクリック
-2. CSVファイルがダウンロードされます
-3. ExcelやGoogleスプレッドシートで開いて編集・分析可能
+| KPI          | 説明                         | 計測方法      |
+| ------------ | -------------------------- | --------- |
+| AIO引用キーワード数  | AI Overviewに引用されているキーワード総数 | 定期的な分析実行  |
+| AIO月間流入予想合計  | 全AIO引用キーワードからの推定月間流入合計     | 分析結果の合計値  |
+| AIO/SERP流入比率 | AIO流入とSERP流入の比率            | 両流入予想の比較  |
+| 高価値キーワード数    | 検索ボリューム1,000以上のAIO引用キーワード数 | フィルタリング結果 |
 
-## 注意事項
+---
 
-**分析精度について**
+## よくある質問
 
-- AI Overviewsの表示は日々変化するため、分析結果は参考値として活用してください
-- DataForSEO APIのデータ更新頻度に依存します
-- 実際のGoogle検索結果と異なる場合があります
+<AccordionGroup>
+  <Accordion title="AIO引用とSERP順位は連動していますか？">
+    必ずしも連動していません。AI Overviewはコンテンツの質や関連性を独自に評価して引用元を選定するため、SERP順位が低くてもAIOに引用されることがあります。逆に、SERP1位でもAIOに引用されないケースもあります。
+  </Accordion>
+  <Accordion title="月間流入予想はどの程度正確ですか？">
+    本システムの月間流入予想は、複数の調査データに基づく推定値です。実際のトラフィックは以下の要因により変動します：
 
-## **📝 更新履歴**
+    - AI Overviewの表示頻度の変化
+    - ユーザー行動の地域差・時期差
+    - コンテンツの更新による引用位置の変動
+    - Googleアルゴリズムの更新
 
-- 2025-11-10: 初版作成
-- 2026-1-07: ポイント消費を修正
+    目安として活用し、Google Search Consoleの実測値と併せて評価することを推奨します。
+  </Accordion>
+  <Accordion title="データが見つからない場合はポイントが消費されますか？">
+    いいえ、データが見つからなかった場合はポイントは消費されません。ただし、検索は実行されるため、ドメインやURLの入力ミスがないか事前にご確認ください。
+  </Accordion>
+  <Accordion title="どのくらいの頻度で分析すべきですか？">
+    AI Overviewの引用状況は日々変動する可能性があります。以下を目安に定期的な分析を推奨します：
+
+    - **重要ドメイン**: 週1回
+    - **一般的なモニタリング**: 月1回
+    - **競合分析**: 月1回
+  </Accordion>
+  <Accordion title="SERP順位が「-」と表示されるのはなぜですか？">
+    AIOには引用されているが、同一キーワードのオーガニック検索結果（100位以内）にはランクインしていない場合、SERP順位は「-」と表示されます。これはAIO独自の引用選定基準によるものです。
+  </Accordion>
+  <Accordion title="DataForSEOのETVとの違いは何ですか？">
+    DataForSEOが提供するETV（Estimated Traffic Value）は従来のSERP CTR係数をベースに計算されています。しかし、AI Overviewからの流入は従来SERPより大幅に低いCTRとなるため、本システムでは独自の調査データに基づくCTR係数を適用し、より正確な流入予想を算出しています。
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## 技術仕様
+
+### API仕様
+
+<Tabs>
+  <Tab title="エンドポイント">
+    ```
+    POST /api/aio-ranking/analyze
+    ```
+
+    **リクエストボディ**:
+
+    ```json
+    {
+      "target": "example.com",
+      "matchType": "domain",
+      "location": "Japan",
+      "language": "Japanese",
+      "limit": 100
+    }
+    ```
+
+    **レスポンス**:
+
+    ```json
+    {
+      "success": true,
+      "data": {
+        "results": [...],
+        "total_results": 42,
+        "points_cost": 30,
+        "points_deducted": true
+      },
+      "meta": {
+        "duration_ms": 15234,
+        "timestamp": "2025-01-09T12:00:00.000Z"
+      }
+    }
+    ```
+  </Tab>
+  <Tab title="データソース">
+    **DataForSEO API**:
+
+    - エンドポイント: `dataforseo_labs/google/ranked_keywords/live`
+    - 取得項目タイプ: `["ai_overview_reference", "organic"]`
+
+    1回のAPI呼び出しでAIO引用データとオーガニック検索データを同時取得し、キーワード単位でマージしています。
+  </Tab>
+  <Tab title="キャッシュ">
+    分析結果は`analysis_cache`テーブルに保存され、履歴として参照可能です。
+
+    キャッシュID: レスポンスの`meta.cache_id`で取得可能
+  </Tab>
+</Tabs>
+
+### 関連ファイル
+
+| ファイル                                       | 説明                |
+| ------------------------------------------ | ----------------- |
+| `src/app/aio-ranking/page.tsx`             | フロントエンドページ        |
+| `src/app/api/aio-ranking/analyze/route.ts` | 分析APIエンドポイント      |
+| `src/lib/dataforseo.ts`                    | DataForSEO API統合  |
+| `src/lib/ctr-coefficients.ts`              | CTR係数定義・計算ユーティリティ |
+
+---
+
+## 関連機能
+
+<CardGroup cols={2}>
+  <Card title="AI Ready分析" icon="robot" href="/geomonitor/ai-ready-analysis">
+    WebページがAI検索に最適化されているかを分析
+  </Card>
+  <Card title="SEO順位計測" icon="chart-line" href="/geomonitor/seo-ranking">
+    キーワードごとの検索順位を定期計測
+  </Card>
+</CardGroup>
