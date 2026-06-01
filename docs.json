@@ -18,74 +18,80 @@
         }
       ]
     },
-    "tabs": [
+    "products": [
       {
-        "tab": "Guides",
-        "groups": [
+        "product": "LinkSurge ガイド",
+        "tabs": [
           {
-            "group": "AI Overviewsツール",
+            "tab": "Guides",
             "pages": [
-              "ai-overviews/hyoujisaitekika",
-              "ai-overviews/hyoujikeywordbunseki",
-              "geo-monitor/geo-roshutu",
-              "geo-monitor/geo-mentions-search",
-              "geo-monitor/geo-brand-cross"
-            ]
-          },
-          {
-            "group": "GEO(生成AI最適化)ツール",
-            "pages": [
-              "geo-monitor/geo-monitor",
-              "geo-monitor/ai-inyousaitekikabunseki"
-            ]
-          },
-          {
-            "group": "SEOツール",
-            "pages": [
-              "seo-tools/jyunichecktool",
-              "seo-tools/ai-kenshutuki",
-              "seo-tools/keyword-suggest",
-              "seo-tools/rankinkeyword",
-              "seo-tools/kanren-keyword-bunseki",
-              "seo-tools/keyword-kyougou-bunseki",
-              "seo-tools/backlink-bunseki",
-              "seo-tools/image-seo-saitekika",
-              "seo-tools/ai-blog-seisei",
-              "seo-tools/faq-schema"
-            ]
-          },
-          {
-            "group": "Google Adsツール",
-            "pages": [
-              "google-ads/sitekanren-keyword",
-              "google-ads/searchvolum-bunseki",
-              "google-ads/kanren-keyword-bunseki",
-              "google-ads/adtraffic-yosoku"
-            ]
-          },
-          {
-            "group": "SNSツール",
-            "pages": [
-              "sns-tools/x-thread-generator",
-              "sns-tools/image-x-post"
-            ]
-          },
-          {
-            "group": "AIチャット",
-            "pages": [
-              "ai-chat/ai-chat"
-            ]
-          },
-          {
-            "group": "料金プラン",
-            "pages": [
-              "price/price"
-            ]
-          },
-          {
-            "group": "Support",
-            "pages": [
-              "support"
+              "file",
+              {
+                "group": "AI Overviewsツール",
+                "pages": [
+                  "ai-overviews/hyoujisaitekika",
+                  "ai-overviews/hyoujikeywordbunseki",
+                  "geo-monitor/geo-roshutu",
+                  "geo-monitor/geo-mentions-search",
+                  "geo-monitor/geo-brand-cross"
+                ]
+              },
+              {
+                "group": "GEO(生成AI最適化)ツール",
+                "pages": [
+                  "geo-monitor/geo-monitor",
+                  "geo-monitor/ai-inyousaitekikabunseki"
+                ]
+              },
+              {
+                "group": "SEOツール",
+                "pages": [
+                  "seo-tools/jyunichecktool",
+                  "seo-tools/ai-kenshutuki",
+                  "seo-tools/keyword-suggest",
+                  "seo-tools/rankinkeyword",
+                  "seo-tools/kanren-keyword-bunseki",
+                  "seo-tools/keyword-kyougou-bunseki",
+                  "seo-tools/backlink-bunseki",
+                  "seo-tools/image-seo-saitekika",
+                  "seo-tools/ai-blog-seisei",
+                  "seo-tools/faq-schema"
+                ]
+              },
+              {
+                "group": "Google Adsツール",
+                "pages": [
+                  "google-ads/sitekanren-keyword",
+                  "google-ads/searchvolum-bunseki",
+                  "google-ads/kanren-keyword-bunseki",
+                  "google-ads/adtraffic-yosoku"
+                ]
+              },
+              {
+                "group": "SNSツール",
+                "pages": [
+                  "sns-tools/x-thread-generator",
+                  "sns-tools/image-x-post"
+                ]
+              },
+              {
+                "group": "AIチャット",
+                "pages": [
+                  "ai-chat/ai-chat"
+                ]
+              },
+              {
+                "group": "料金プラン",
+                "pages": [
+                  "price/price"
+                ]
+              },
+              {
+                "group": "Support",
+                "pages": [
+                  "support"
+                ]
+              }
             ]
           }
         ]
