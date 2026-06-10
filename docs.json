@@ -61,7 +61,8 @@
                 "group": "コンテンツ制作支援",
                 "pages": [
                   "seo-tools/ai-blog-seisei",
-                  "seo-tools/faq-schema"
+                  "seo-tools/faq-schema",
+                  "seo-tools/file"
                 ]
               },
               {
