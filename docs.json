@@ -33,7 +33,8 @@
                   "ai-overviews/hyoujikeywordbunseki",
                   "geo-monitor/geo-roshutu",
                   "geo-monitor/geo-mentions-search",
-                  "geo-monitor/geo-brand-cross"
+                  "geo-monitor/geo-brand-cross",
+                  "geo-monitor/file"
                 ]
               },
               {
