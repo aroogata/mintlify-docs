@@ -54,14 +54,15 @@
                   "seo-tools/kanren-keyword-bunseki",
                   "seo-tools/keyword-kyougou-bunseki",
                   "seo-tools/backlink-bunseki",
-                  "seo-tools/image-seo-saitekika",
-                  "seo-tools/ai-blog-seisei",
-                  "seo-tools/faq-schema"
+                  "seo-tools/image-seo-saitekika"
                 ]
               },
               {
                 "group": "コンテンツ制作支援",
-                "pages": []
+                "pages": [
+                  "seo-tools/ai-blog-seisei",
+                  "seo-tools/faq-schema"
+                ]
               },
               {
                 "group": "Google Adsツール",
